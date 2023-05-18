@@ -26,4 +26,13 @@ public class StudentController {
         return service.saveStudent(student);
     }
 
+
+    @DeleteMapping("/delete/{id}")
+    public String delelteById(@PathVariable int id){
+        return service.deleteById(id);
+    }
+
+
+
+
 }
