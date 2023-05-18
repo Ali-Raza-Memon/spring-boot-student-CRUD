@@ -26,4 +26,14 @@ public class StudentService {
          repo.deleteById(id);
          return "student removed"+id;
     }
+
+    public Student updateStudent(Student student) {
+        Student std = repo.findById(student.getId()).orElse(null);
+        std.setFirst_name(student.getFirst_name());
+        std.setLast_name(student.getLast_name());
+        std.setCMSId(student.getCMSId());
+        std.setGender(student.getGender());
+        std.setSemester(student.getSemester());
+        return repo.save(std);
+    }
 }

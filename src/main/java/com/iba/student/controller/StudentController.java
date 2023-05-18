@@ -32,6 +32,10 @@ public class StudentController {
         return service.deleteById(id);
     }
 
+    @PutMapping("/update")
+    public Student updateStudent(@RequestBody Student student){
+        return service.updateStudent(student);
+    }
 
 
 
